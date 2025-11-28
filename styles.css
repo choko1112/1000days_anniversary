@@ -1,0 +1,221 @@
+/* リセットとベース設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
+  background-color: #faf8f5;
+  color: #3d3530;
+  line-height: 1.6;
+}
+
+/* ヘッダー */
+.header {
+  background: linear-gradient(135deg, #e8d5c4 0%, #f4ebe3 100%);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 3px solid #d4a373;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #8b6d47;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  color: #a88b6a;
+  font-weight: 300;
+}
+
+/* タイムラインコンテナ */
+.timeline-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+/* 年セクション */
+.year-section {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.year-marker {
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.year-marker::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212, 163, 115, 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.year-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d4a373;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background-color: #faf8f5;
+  border: 2px solid #d4a373;
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+}
+
+/* メモリーカード */
+.memory-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(139, 109, 71, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0e6dc;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.memory-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 109, 71, 0.12);
+}
+
+.memory-content {
+  flex: 1;
+}
+
+.memory-header {
+  margin-bottom: 1rem;
+}
+
+.memory-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #a88b6a;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.memory-place {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8b6d47;
+  margin-bottom: 0.75rem;
+}
+
+.memory-text {
+  font-size: 1rem;
+  color: #5a4a3d;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* 画像エリア */
+.memory-image {
+  flex-shrink: 0;
+  width: 280px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0e6dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* フッター */
+.footer {
+  background-color: #e8d5c4;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d47;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-top: 3px solid #d4a373;
+  margin-top: 3rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .year-title {
+    font-size: 2.5rem;
+    padding: 0.4rem 1.5rem;
+  }
+
+  .memory-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .memory-image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .memory-place {
+    font-size: 1.3rem;
+  }
+
+  .timeline-container {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .header-title {
+    font-size: 1.6rem;
+  }
+
+  .year-title {
+    font-size: 2rem;
+    padding: 0.3rem 1.2rem;
+  }
+
+  .memory-card {
+    padding: 1.2rem;
+  }
+
+  .memory-place {
+    font-size: 1.2rem;
+  }
+
+  .memory-text {
+    font-size: 0.95rem;
+  }
+}
